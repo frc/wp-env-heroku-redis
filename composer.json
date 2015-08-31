@@ -1,0 +1,19 @@
+{
+  "name": "frc/wp-env-heroku-redis",
+  "license": "MIT",
+  "type": "library",
+  "description": "Export Heroku redis addon configuration for WordPress.",
+  "keywords": ["Heroku", "WordPress", "Redis"],
+  "authors": [
+    {
+      "name": "Panu Ervamaa",
+      "email": "panu.ervamaa@frantic.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.3"
+  },
+  "autoload": {
+    "files": [ "src/Redis.php" ]
+  }
+}
