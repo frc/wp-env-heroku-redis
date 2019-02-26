@@ -13,4 +13,10 @@ if ( $env ) {
         ini_set('session.save_handler','redis');
         ini_set('session.save_path',"tcp://$url[host]:$url[port]?auth=$url[pass]");
     }
+    if (getenv('REDIS_GLOBAL_GROUPS')) {
+        $groups = array_map('trim', explode(',', getenv('REDIS_GLOBAL_GROUPS')));
+        if (!empty($groups)) {
+            define('WP_REDIS_GLOBAL_GROUPS', $groups);
+        }
+    }
 }
