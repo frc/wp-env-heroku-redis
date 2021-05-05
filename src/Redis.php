@@ -13,4 +13,8 @@ if ( $env ) {
         ini_set('session.save_handler','redis');
         ini_set('session.save_path',"tcp://$url[host]:$url[port]?auth=$url[pass]");
     }
+    if ($url['scheme'] == 'redis' || $url['scheme'] == 'rediss') {
+        define('WP_REDIS_SCHEME', 'tls');
+        define('WP_REDIS_STREAM_CONTEXT', ['stream' => ['verify_peer' => false, 'verify_peer_name'  => false, 'allow_self_signed' => true ]]);
+    }
 }
