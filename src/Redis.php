@@ -11,6 +11,6 @@ if ( $env ) {
 
     if (getenv('REDIS_SESSION_STORAGE') && getenv('REDIS_SESSION_STORAGE') === 'true') {
         ini_set('session.save_handler','redis');
-        ini_set('session.save_path',"tcp://$url[host]:$url[port]?auth=$url[pass]");
+        ini_set('session.save_path',"tcp://$url[host]:$url[port]?auth=$url[pass]?ssl");
     }
 }
