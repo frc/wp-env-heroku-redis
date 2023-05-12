@@ -19,7 +19,7 @@ if ( $env ) {
     if ($url['scheme'] == 'rediss') {
         $scheme = 'tlsv1.2';
         define('WP_REDIS_SCHEME', $scheme);
-        define('WP_REDIS_STREAM_CONTEXT', ['stream' => ['verify_peer' => false, 'verify_peer_name'  => false, 'allow_self_signed' => true ]]);
+        define('WP_REDIS_SSL_CONTEXT', ['verify_peer' => false, 'verify_peer_name'  => false]);
     }
 
     if (getenv('REDIS_SESSION_STORAGE') && getenv('REDIS_SESSION_STORAGE') === 'true') {
