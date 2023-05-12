@@ -17,7 +17,7 @@ if ( $env ) {
     define('WP_REDIS_PASSWORD', trim( $url['pass'] ));
 
     if ($url['scheme'] == 'rediss') {
-        $scheme = 'tlsv1.2';
+        $scheme = 'tls';
         define('WP_REDIS_SCHEME', $scheme);
         define('WP_REDIS_SSL_CONTEXT', ['verify_peer' => false, 'verify_peer_name'  => false]);
     }
